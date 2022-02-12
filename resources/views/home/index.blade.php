@@ -1,7 +1,7 @@
 @extends('layouts.home-layout')
 
 @section('main-content')
-<div class="slider_area">
+{{-- <div class="slider_area">
     <div class="slider_active owl-carousel">
         <div class="single_slider  d-flex align-items-center slider_bg_1 overlay">
             <div class="container">
@@ -16,11 +16,11 @@
             </div>
         </div>
     </div>
-</div>
+</div> --}}
 <!-- slider_area_end -->
 
 <!-- where_togo_area_start  -->
-<div class="where_togo_area">
+{{-- <div class="where_togo_area">
     <div class="container">
         <div class="row align-items-center">
             <div class="col-lg-3">
@@ -52,16 +52,40 @@
             </div>
         </div>
     </div>
-</div>
+</div> --}}
 <!-- where_togo_area_end  -->
 
 <!-- popular_destination_area_start  -->
 <!-- popular_destination_area_end  -->
 {{-- {{ $wisata->links('pagination::bootstrap-4') }} --}}
 <div class="popular_places_area">
+
     <div class="container">
+
+        {{-- <div class="container bg-white"> --}}
+            {{-- <div class="row py-4 mb-5">
+                <div class="col-sm-12 col-md-12 col-lg-12 d-flex justify-content-center">
+                    <h2>
+                        Selamat Datang
+                    </h2>
+                </div>
+            </div> --}}
+
+            {{-- <div class="card border-0">
+                <div class="card-body">
+                    <div class="row py-4 mb-5">
+                        <div class="col-sm-12 col-md-12 col-lg-12 d-flex justify-content-center">
+                            <h2>
+                                Selamat Datang
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+            </div> --}}
+        {{-- </div> --}}
+
         <div class="row justify-content-center">
-            <div class="col-lg-6">
+            <div class="col-lg-6 mt-5">
                 <div class="section_title text-center mb_70">
                     <h3>Destinasi Wisata</h3>
                     <p>Daftar destinasi wisata yang ada di Sulawesi Tenggara</p>
@@ -83,10 +107,10 @@
                         <p>{{ $wis->wisata_kota }} / {{ $wis->wisata_kelurahan }} / {{ $wis->wisata_kecamatan }}</p>
                         <div class="rating_days d-flex justify-content-between">
                             {{-- <span class="d-flex justify-content-center align-items-center">
-                                 <i class="fa fa-star"></i> 
-                                 <i class="fa fa-star"></i> 
-                                 <i class="fa fa-star"></i> 
-                                 <i class="fa fa-star"></i> 
+                                 <i class="fa fa-star"></i>
+                                 <i class="fa fa-star"></i>
+                                 <i class="fa fa-star"></i>
+                                 <i class="fa fa-star"></i>
                                  <i class="fa fa-star"></i>
                                  <a href="#">(20 Review)</a>
                             </span>
