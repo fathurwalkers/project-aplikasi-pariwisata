@@ -95,8 +95,8 @@ Route::group(['prefix' => '/dashboard', 'middleware' => 'ceklogin'], function ()
 });
 
 // Authentication Route
-Route::get('/login', [BackController::class, 'login'])->name('login');
-Route::post('/post-login', [BackController::class, 'post_login'])->name('post-login');
-Route::get('/register', [BackController::class, 'register'])->name('register');
-Route::post('/post-register', [BackController::class, 'post_register'])->name('post-register');
-Route::post('/logout', [BackController::class, 'logout'])->name('logout');
+Route::get('/login', [LoginController::class, 'login'])->name('login');
+Route::post('/post-login', [LoginController::class, 'post_login'])->name('post-login');
+Route::get('/register', [LoginController::class, 'register'])->name('register');
+Route::post('/post-register', [LoginController::class, 'post_register'])->name('post-register');
+Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
