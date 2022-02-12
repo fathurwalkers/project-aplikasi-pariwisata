@@ -81,11 +81,21 @@
                                     <div class="number">
                                     </div>
                                     <div class="social_links d-none d-xl-block">
+
+                                        @php
+                                            $users = session('data_login');
+                                        @endphp
+                                        @if ($users)
+                                        <ul>
+                                            <li><a href="{{ route('dashboard') }}" class="text-bold text-dark"> {{ $users->login_nama }} </a></li>
+
+                                        </ul>
+                                        @else
                                         <ul>
                                             <li><a href="{{ route('register') }}" class="text-bold text-dark"> Daftar </a></li>
                                             <li><a href="{{ route('login') }}" class="text-bold text-dark"> Masuk </a></li>
-
                                         </ul>
+                                        @endif
                                     </div>
                                 </div>
                             </div>

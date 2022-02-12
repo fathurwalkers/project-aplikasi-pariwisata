@@ -49,7 +49,7 @@ class HomeController extends Controller
 
     public function daftar_produk()
     {
-        $produk = Produk::all();
+        $produk = Produk::paginate(6);
         return view('home.daftar-produk', [
             'produk' => $produk
         ]);

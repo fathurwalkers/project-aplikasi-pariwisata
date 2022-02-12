@@ -27,6 +27,9 @@ Route::group(['prefix' => '/'], function () {
 // Dashboard Route
 Route::group(['prefix' => '/dashboard', 'middleware' => 'ceklogin'], function () {
 
+    // Index Route
+    Route::get('/', [BackController::class, 'index'])->name('dashboard');
+
     // Wisata Route
     Route::get('/daftar-wisata', [WisataController::class, 'daftar_wisata'])->name('daftar-wisata');
     Route::get('/lihat-wisata/wisata/{id}', [WisataController::class, 'lihat_wisata'])->name('lihat-wisata');
@@ -66,7 +69,6 @@ Route::group(['prefix' => '/dashboard', 'middleware' => 'ceklogin'], function ()
     Route::get('/daftar-gallery', [MediaController::class, 'daftar_gallery'])->name('daftar-gallery');
 
     // Miscellenaous
-    Route::get('/', [BackController::class, 'index'])->name('dashboard');
     Route::get('/format-layout', [BackController::class, 'format_layout'])->name('format-layout');
     Route::get('/profile', [BackController::class, 'profile'])->name('profile');
 
