@@ -532,7 +532,7 @@ class BackController extends Controller
     }
     // END POST METHOD =========================================================
 
-    // HAPUS METHOD ============================================================ 
+    // HAPUS METHOD ============================================================
     public function hapus_produk(Request $request, $id)
     {
         $session_users  = session('data_login');
@@ -600,5 +600,5 @@ class BackController extends Controller
         $umkm->forceDelete();
         return redirect()->route('daftar-umkm')->with('status', 'Berhasil hapus umkm!');
     }
-    // END HAPUS METHOD ======================================================== 
+    // END HAPUS METHOD ========================================================
 }
