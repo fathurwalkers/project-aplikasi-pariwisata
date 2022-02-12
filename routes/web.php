@@ -76,14 +76,6 @@ Route::group(['prefix' => '/dashboard', 'middleware' => 'ceklogin'], function ()
     // Daftar Route
     Route::get('/daftar-pengguna', [BackController::class, 'daftar_pengguna'])->name('daftar-pengguna');
 
-    // Tambah Route
-
-    // Update Route
-
-    // Post Route
-
-    // Hapus Route
-
     // Generate Route
     Route::get('/generate-media', [GenerateController::class, 'generate_media'])->name('generate-media');
     Route::get('/generate-user', [GenerateController::class, 'generate_user'])->name('generate-user');
