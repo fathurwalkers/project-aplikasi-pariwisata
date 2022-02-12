@@ -39,4 +39,27 @@ class UmkmController extends Controller
             'umkm' => $umkm
         ]);
     }
+
+    public function hapus_umkm(Request $request, $id)
+    {
+        $session_users  = session('data_login');
+        $users          = Login::find($session_users->id);
+        $umkm           = Umkm::find($id);
+        // $umkm->login()->dissociate();
+        // $umkm->media()->detach();
+        // $umkm->produk()->dissociate();
+        $umkm->forceDelete();
+        return redirect()->route('daftar-umkm')->with('status', 'Berhasil hapus umkm!');
+    }
+
+    public function daftar_umkm()
+    {
+        $session_users  = session('data_login');
+        $users          = Login::findOrFail($session_users->id);
+        $umkm           = Umkm::with('login')->get();
+        return view('admin.daftar-umkm', [
+            'users' => $users,
+            'umkm' => $umkm
+        ]);
+    }
 }

@@ -43,10 +43,10 @@
                     <div class="header_bottom_border">
                         <div class="row align-items-center">
                             <div class="col-xl-2 col-lg-2">
-                                <div class="logo">  
+                                <div class="logo">
                                     {{-- <a href="index.html">
                                         <img src="{{ asset('assets/pariwisata') }}/img/logo.png" alt="">
-                                    </a> --}} 
+                                    </a> --}}
                                     <h4>UKM PARIWISATA BUTON</h4>
                                 </div>
                             </div>
@@ -84,7 +84,7 @@
                                         <ul>
                                             <li><a href="{{ route('register') }}" class="text-bold text-dark"> Daftar </a></li>
                                             <li><a href="{{ route('login') }}" class="text-bold text-dark"> Masuk </a></li>
-                      
+
                                         </ul>
                                     </div>
                                 </div>
@@ -240,7 +240,7 @@
                 <div class="row">
                     <div class="col-xl-12">
                         <p class="copy_right text-center">
-                            Aplikasi Wisata - Copyright @ 2021 
+                            Aplikasi Wisata - Copyright @ 2021
                         </p>
                     </div>
                 </div>
@@ -262,7 +262,7 @@
     </div>
   </div>
     <!-- link that opens popup -->
-<!--     
+<!--
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-de7e2ef6bfefd24b79a3f68b414b87b8db5b08439cac3f1012092b2290c719cd.js"></script>
 
@@ -287,9 +287,9 @@
     <script src="{{ asset('assets/pariwisata') }}/js/plugins.js"></script>
     <script src="{{ asset('assets/pariwisata') }}/js/gijgo.min.js"></script>
     <script src="{{ asset('assets/pariwisata') }}/js/slick.min.js"></script>
-   
 
-    
+
+
     <!--contact js-->
     <script src="{{ asset('assets/pariwisata') }}/js/contact.js"></script>
     <script src="{{ asset('assets/pariwisata') }}/js/jquery.ajaxchimp.min.js"></script>
