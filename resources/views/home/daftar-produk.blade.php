@@ -5,7 +5,7 @@
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-lg-6">
-                <div class="section_title text-center mb_70">
+                <div class="section_title text-center mb_70 mt-4">
                     <h3>Destinasi Wisata</h3>
                     <p>Daftar destinasi wisata yang ada di Sulawesi Tenggara</p>
                 </div>

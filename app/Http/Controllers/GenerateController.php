@@ -20,11 +20,11 @@ class GenerateController extends Controller
     public function generate_media()
     {
         $media                          = new Media;
-        for ($i = 0; $i < 50; $i++) {
+        for ($i = 0; $i < 25; $i++) {
             $kodeMedia                  = strtoupper(Str::random(5));
             $saveMedia                  = $media->create([
-                'media_path'            => 'foto/default-user.png',
-                'media_url'             => url('homepage') . 'foto/default-user.png',
+                'media_path'            => 'foto/default-wisata-foto.jpg',
+                'media_url'             => url('homepage') . 'foto/default-wisata-foto.jpg',
                 'media_kode'            => $kodeMedia,
                 'media_tipe'            => strtoupper('png'),
                 'media_kategori'        => 'wisata',
@@ -34,7 +34,7 @@ class GenerateController extends Controller
             $saveMedia->save();
         }
 
-        for ($i = 0; $i < 50; $i++) {
+        for ($i = 0; $i < 25; $i++) {
             $kodeMedia                  = strtoupper(Str::random(5));
             $saveMedia                  = $media->create([
                 'media_path'            => 'foto/default-wisata-foto.jpg',
@@ -48,7 +48,7 @@ class GenerateController extends Controller
             $saveMedia->save();
         }
 
-        for ($i = 0; $i < 50; $i++) {
+        for ($i = 0; $i < 25; $i++) {
             $kodeMedia                  = strtoupper(Str::random(5));
             $saveMedia                  = $media->create([
                 'media_path'            => 'foto/default-produk.png',
@@ -62,7 +62,7 @@ class GenerateController extends Controller
             $saveMedia->save();
         }
 
-        for ($i = 0; $i < 50; $i++) {
+        for ($i = 0; $i < 25; $i++) {
             $kodeMedia                  = strtoupper(Str::random(5));
             $saveMedia                  = $media->create([
                 'media_path'            => 'foto/default-ukm-profile.png',
@@ -80,7 +80,7 @@ class GenerateController extends Controller
     public function generate_user()
     {
         $media                      = Media::where('media_kategori', 'user')->get()->toArray();
-        for ($i = 0; $i < 25; $i++) {
+        for ($i = 0; $i < 15; $i++) {
             $faker                  = Faker::create('id_ID');
             $randomMedia            = Arr::random($media);
             $login_model            = new Login;
@@ -114,7 +114,7 @@ class GenerateController extends Controller
     public function generate_user_umkm()
     {
         $media                      = Media::where('media_kategori', 'user')->get()->toArray();
-        for ($i = 0; $i < 50; $i++) {
+        for ($i = 0; $i < 25; $i++) {
             $faker                  = Faker::create('id_ID');
             $randomMedia            = Arr::random($media);
             $login_model            = new Login;
@@ -172,7 +172,7 @@ class GenerateController extends Controller
         $userId                         = [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
         $provinsi                       = 'Sulawesi Tenggara';
         $media                          = Media::where('media_kategori', 'wisata')->get()->toArray();
-        for ($i = 0; $i < 100; $i++) {
+        for ($i = 0; $i < 45; $i++) {
             $randomMedia                = Arr::random($media);
             $randomUserId               = Arr::random($userId);
             $randomKategori             = Arr::random($kategori_wisata);
@@ -233,7 +233,7 @@ class GenerateController extends Controller
         $umkm                           = Umkm::all()->toArray();
         $produk_header_gambar           = 'foto/default-wisata-foto.jpg';
         $media                          = Media::where('media_kategori', 'produk')->get()->toArray();
-        for ($i = 0; $i < 500; $i++) {
+        for ($i = 0; $i < 100; $i++) {
             $randomMedia                = Arr::random($media);
             $kode_produk                = Str::random(5);
             $randomKategori             = Arr::random($kategori_produk);

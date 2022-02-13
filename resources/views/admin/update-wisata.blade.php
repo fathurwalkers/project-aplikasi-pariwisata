@@ -30,7 +30,7 @@
             <div class="card-header">
                 <div class="row">
                     <div class="col-sm-10 col-md-10 col-lg-10">
-                        <h4 class="text-bold text-dark">Tambah Destinasi Wisata</h4>
+                        <h4 class="text-bold text-dark">Ubah Destinasi Wisata</h4>
                     </div>
                     <div class="col-sm-2 col-md-2 col-lg-2 d-flex justify-content-end mx-auto my-auto">
                         <form action="{{ route('dashboard') }}" method="GET">
@@ -38,14 +38,14 @@
                             <button type="submit" class="btn btn-md rounded btn-primary shadow-sm border-1 border-light">
                                 <span class="text-bold">
                                     Kembali
-                                </span> 
+                                </span>
                             </button>
                         </form>
                     </div>
                 </div>
             </div>
 
-            <!-- Main Content --> 
+            <!-- Main Content -->
             <div class="card-body">
 
                 <form action="{{ route('post-update-wisata', $wisata->id) }}" method="POST" enctype="multipart/form-data">
@@ -67,7 +67,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="row">
                         <div class="col-sm-12 col-md-12 col-lg-12">
                             <div class="form-group">
@@ -101,7 +101,7 @@
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="row mb-2">
                         <div class="col-sm-12 col-md-12 col-lg-12">
                             <label for="">Gambar Lama : </label><br>
@@ -125,7 +125,7 @@
                             </div>
                         </div>
                     </div>
-    
+
                     <div class="row">
                         <div class="col-sm-12 col-md-12 col-lg-12">
                             <label for="wisata_deskripsi">Deskripsi Tentang Wisata : </label>
@@ -139,9 +139,9 @@
                         </div>
                     </div>
                 </form>
-                
+
             </div>
-            <!-- End Main Content --> 
+            <!-- End Main Content -->
 
         </div>
     </div>

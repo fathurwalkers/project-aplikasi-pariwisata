@@ -55,7 +55,6 @@
                                     <nav>
                                         <ul id="navigation">
                                             <li><a class="active" href="{{ route('homepage') }}">Home</a></li>
-                                            <li><a class="" href="">Destinasi Wisata</a></l/li>
                                             <li><a class="" href="{{ route('home-daftar-produk') }}">Produk</a></l/li>
                                             <li><a class="" href="">UMKM</a></l/li>
                                             {{-- <li><a href="#">pages <i class="ti-angle-down"></i></a>

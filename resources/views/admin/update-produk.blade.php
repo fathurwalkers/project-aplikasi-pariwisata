@@ -29,7 +29,7 @@
             <div class="card-header">
                 <div class="row">
                     <div class="col-sm-10 col-md-10 col-lg-10">
-                        <h4 class="text-bold text-dark">Tambah Produk</h4>
+                        <h4 class="text-bold text-dark">Ubah Produk</h4>
                     </div>
                     <div class="col-sm-2 col-md-2 col-lg-2 d-flex justify-content-end mx-auto my-auto">
                         <form action="{{ route('dashboard') }}" method="GET">
@@ -37,7 +37,7 @@
                             <button type="submit" class="btn btn-md rounded btn-primary shadow-sm border-1 border-light">
                                 <span class="text-bold">
                                     Kembali
-                                </span> 
+                                </span>
                             </button>
                         </form>
                     </div>
@@ -61,7 +61,7 @@
                     </div>
                     <div class="row">
                         <div class="col-sm-6 col-md-6 col-lg-6">
-                            <!-- Main Content --> 
+                            <!-- Main Content -->
                             <div class="form-group">
                                 <label for="produk_nama">Nama Produk : </label>
                                 <input type="text" class="form-control @error('produk_nama') is-invalid @enderror" id="produk_nama" placeholder="Masukkan nama produk..." name="produk_nama" value="{{ $produk->produk_nama }}">
@@ -69,7 +69,7 @@
                             </div>
                         </div>
                         <div class="col-sm-6 col-md-6 col-lg-6">
-                            <!-- Main Content --> 
+                            <!-- Main Content -->
                             <div class="form-group">
                                 <label for="produk_harga">Harga Produk : </label>
                                 <input type="number" class="form-control @error('produk_harga') is-invalid @enderror" id="produk_harga" placeholder="Masukkan Harga produk..." name="produk_harga" value="{{ $produk->produk_harga }}">
