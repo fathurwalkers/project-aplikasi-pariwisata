@@ -66,13 +66,13 @@
                     <span>Profile Pengguna</span></a>
             </li>
 
-            @if ($users->login_level == 'user')
+            {{-- @if ($users->login_level == 'user')
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('pendaftaran-ukm') }}">
                         <i class="fas fa-fw fa-tachometer-alt"></i>
                         <span>Pendaftaran UKM</span></a>
                 </li>
-            @endif
+            @endif --}}
 
             @if ($users->login_level == 'umkm')
             <li class="nav-item">
