@@ -46,6 +46,7 @@ Route::group(['prefix' => '/dashboard', 'middleware' => 'ceklogin'], function ()
     Route::post('/hapus-wisata/wisata/hapus/{id}', [WisataController::class, 'hapus_wisata'])->name('hapus-wisata');
 
     // UMKM Route
+    Route::get('/pendaftaran-ukm', [UmkmController::class, 'pendaftaran_ukm'])->name('pendaftaran-ukm');
     Route::get('/tambah-umkm/tambah', [UmkmController::class, 'tambah_umkm'])->name('tambah-umkm');
     Route::get('/profile-umkm', [UmkmController::class, 'profile_umkm'])->name('profile-umkm');
     Route::get('/daftar-umkm', [UmkmController::class, 'daftar_umkm'])->name('daftar-umkm');

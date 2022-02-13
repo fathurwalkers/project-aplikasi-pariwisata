@@ -24,7 +24,7 @@
     <link href="{{ asset('assets/sbadmin/') }}/css/sb-admin-2.min.css" rel="stylesheet">
 
     {{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous"> --}}
-    
+
     <link href="{{ asset('assets/leafletjs') }}/leaflet.css" rel="stylesheet">
 
     {{-- <link rel="stylesheet" href="{{ asset('assets/datatables') }}/datatables.css" type="text/css"> --}}
@@ -66,6 +66,14 @@
                     <span>Profile Pengguna</span></a>
             </li>
 
+            @if ($users->login_level == 'user')
+                <li class="nav-item">
+                    <a class="nav-link" href="{{ route('pendaftaran-ukm') }}">
+                        <i class="fas fa-fw fa-tachometer-alt"></i>
+                        <span>Pendaftaran UKM</span></a>
+                </li>
+            @endif
+
             @if ($users->login_level == 'umkm')
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('profile-umkm') }}">
@@ -80,7 +88,7 @@
             <hr class="sidebar-divider">
 
             <div class="sidebar-heading">
-                Menu Kelola : 
+                Menu Kelola :
             </div>
             @endif
 
@@ -160,7 +168,7 @@
                         <a class="collapse-item" href="{{ route('daftar-kategori-produk') }}">Kategori Produk</a>
                         <a class="collapse-item" href="{{ route('tambah-kategori') }}">Tambah Kategori</a>
                         @endif --}}
-                        
+
                     </div>
                 </div>
             </li>
@@ -252,7 +260,7 @@
                     </form> --}}
                     {{-- <div class="col-lg-12 col-sm-12 col-md-12"> --}}
                         <h4 class="text-bold text-dark">
-                            Control Panel - @yield('title') 
+                            Control Panel - @yield('title')
                         </h4>
                     {{-- </div> --}}
 

@@ -62,4 +62,13 @@ class UmkmController extends Controller
             'umkm' => $umkm
         ]);
     }
+
+    public function pendaftaran_ukm()
+    {
+        $session_users  = session('data_login');
+        $users          = Login::findOrFail($session_users->id);
+        return view('admin.pendaftaran-ukm', [
+            'users' => $users
+        ]);
+    }
 }
