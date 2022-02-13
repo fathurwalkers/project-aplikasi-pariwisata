@@ -1,4 +1,4 @@
-@extends('layouts.home-layout')
+@extends('layouts.home-layout-english')
 
 @section('main-content')
 <div class="popular_places_area">
@@ -6,7 +6,7 @@
         <div class="row justify-content-center">
             <div class="col-lg-6">
                 <div class="section_title text-center mb_70 mt-4">
-                    <h3>Produk Unggulan</h3>
+                    <h3>Our Product</h3>
                     <p></p>
                 </div>
             </div>
@@ -53,7 +53,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="more_place_btn text-center">
-                    <a class="boxed-btn4" href="{{ route('homepage') }}">Kembali</a>
+                    <a class="boxed-btn4" href="{{ route('homepage') }}">Back</a>
                 </div>
             </div>
         </div>

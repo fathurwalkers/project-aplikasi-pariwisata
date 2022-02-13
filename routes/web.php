@@ -22,6 +22,12 @@ Route::group(['prefix' => '/'], function () {
     Route::get('/test', [HomeController::class, 'test'])->name('format-layout');
     Route::get('/home/detail-wisata/{id}', [HomeController::class, 'detail_wisata'])->name('detail-wisata');
     Route::get('/home/daftar-produk', [HomeController::class, 'daftar_produk'])->name('home-daftar-produk');
+    Route::get('/home/daftar-ukm', [HomeController::class, 'daftar_umkm'])->name('home-daftar-ukm');
+
+    Route::get('/english', [HomeController::class, 'english_index'])->name('home-english');
+    Route::get('/home/english/detail-wisata/{id}', [HomeController::class, 'english_detail_wisata'])->name('english-detail-wisata');
+    Route::get('/home/english/daftar-produk', [HomeController::class, 'english_daftar_produk'])->name('english-home-daftar-produk');
+    Route::get('/home/english/daftar-ukm', [HomeController::class, 'english_daftar_umkm'])->name('english-home-daftar-ukm');
 });
 
 // Dashboard Route

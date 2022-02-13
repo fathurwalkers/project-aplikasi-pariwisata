@@ -54,9 +54,9 @@
                                 <div class="main-menu  d-none d-lg-block">
                                     <nav>
                                         <ul id="navigation">
-                                            <li><a class="active" href="{{ route('homepage') }}">Home</a></li>
-                                            <li><a class="" href="{{ route('home-daftar-produk') }}">Produk</a></l/li>
-                                            <li><a class="" href="{{ route('home-daftar-ukm') }}">UKM</a></l/li>
+                                            <li><a class="active" href="{{ route('home-english') }}">Home</a></li>
+                                            <li><a class="" href="{{ route('english-home-daftar-produk') }}">Product</a></li>
+                                            <li><a class="" href="{{ route('english-home-daftar-ukm') }}">UKM</a></li>
                                             {{-- <li><a href="#">pages <i class="ti-angle-down"></i></a>
                                                 <ul class="submenu">
                                                         <li><a href="destination_details.html">Destinations details</a></li>
@@ -91,9 +91,9 @@
                                         </ul>
                                         @else
                                         <ul>
-                                            <li><a href="{{ route('home-english') }}" class="text-bold text-dark"> ENG </a></li>
-                                            <li><a href="{{ route('register') }}" class="text-bold text-dark"> Daftar </a></li>
-                                            <li><a href="{{ route('login') }}" class="text-bold text-dark"> Masuk </a></li>
+                                            <li><a href="{{ route('homepage') }}" class="text-bold text-dark"> IND </a></li>
+                                            <li><a href="{{ route('register') }}" class="text-bold text-dark"> Signup </a></li>
+                                            <li><a href="{{ route('login') }}" class="text-bold text-dark"> Member </a></li>
                                         </ul>
                                         @endif
                                     </div>

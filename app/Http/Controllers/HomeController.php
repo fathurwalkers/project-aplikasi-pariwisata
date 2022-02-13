@@ -18,19 +18,19 @@ class HomeController extends Controller
 {
     public function index()
     {
-        $produk             = Produk::all();
-        $umkm               = Umkm::all();
-        $wisata             = Wisata::paginate(9);
-        $kategori           = Kategori::all();
-        $kategori_wisata    = Kategori::where('kategori_tipe', 'wisata')->get();
-        $kategori_produk    = Kategori::where('kategori_tipe', 'produk')->get();
+        $produk                 = Produk::all();
+        $umkm                   = Umkm::all();
+        $wisata                 = Wisata::paginate(9);
+        $kategori               = Kategori::all();
+        $kategori_wisata        = Kategori::where('kategori_tipe', 'wisata')->get();
+        $kategori_produk        = Kategori::where('kategori_tipe', 'produk')->get();
         return view('home.index', [
-            'produk' => $produk,
-            'umkm' => $umkm,
-            'wisata' => $wisata,
-            'kategori' => $kategori,
-            'kategori_wisata' => $kategori_wisata,
-            'kategori_produk' => $kategori_produk
+            'produk'            => $produk,
+            'umkm'              => $umkm,
+            'wisata'            => $wisata,
+            'kategori'          => $kategori,
+            'kategori_wisata'   => $kategori_wisata,
+            'kategori_produk'   => $kategori_produk
         ]);
     }
 
@@ -41,17 +41,71 @@ class HomeController extends Controller
 
     public function detail_wisata($id)
     {
-        $wisata     = Wisata::find($id);
+        $wisata                 = Wisata::find($id);
         return view('home.detail-wisata', [
-            'wisata' => $wisata
+            'wisata'            => $wisata
         ]);
     }
 
     public function daftar_produk()
     {
-        $produk = Produk::paginate(6);
+        $produk                 = Produk::paginate(6);
         return view('home.daftar-produk', [
-            'produk' => $produk
+            'produk'            => $produk
         ]);
     }
+
+    public function daftar_umkm()
+    {
+        $umkm                 = Umkm::paginate(6);
+        return view('home.daftar-ukm', [
+            'umkm'            => $umkm
+        ]);
+    }
+
+    // =========================================================
+
+    // ENGLISH
+    public function english_index()
+    {
+        $produk                 = Produk::all();
+        $umkm                   = Umkm::all();
+        $wisata                 = Wisata::paginate(9);
+        $kategori               = Kategori::all();
+        $kategori_wisata        = Kategori::where('kategori_tipe', 'wisata')->get();
+        $kategori_produk        = Kategori::where('kategori_tipe', 'produk')->get();
+        return view('home.english.index', [
+            'produk'            => $produk,
+            'umkm'              => $umkm,
+            'wisata'            => $wisata,
+            'kategori'          => $kategori,
+            'kategori_wisata'   => $kategori_wisata,
+            'kategori_produk'   => $kategori_produk
+        ]);
+    }
+
+    public function english_detail_wisata($id)
+    {
+        $wisata                 = Wisata::find($id);
+        return view('home.english.detail-wisata', [
+            'wisata'            => $wisata
+        ]);
+    }
+
+    public function english_daftar_produk()
+    {
+        $produk                 = Produk::paginate(6);
+        return view('home.english.daftar-produk', [
+            'produk'            => $produk
+        ]);
+    }
+
+    public function english_daftar_umkm()
+    {
+        $umkm                 = Umkm::paginate(6);
+        return view('home.english.daftar-ukm', [
+            'umkm'            => $umkm
+        ]);
+    }
+
 }
