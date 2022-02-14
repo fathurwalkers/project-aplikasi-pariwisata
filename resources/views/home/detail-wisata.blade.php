@@ -23,8 +23,11 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-sm-12 col-md-12 col-lg-12 border-1 border-black">
-                    <table class="table border-0 mx-auto d-flex justify-content-center">
+                <div class="col-sm-8 col-md-8 col-lg-8 border-1 border-black">
+                    <h4 class="text-center">
+                        Tentang Wisata
+                    </h4>
+                    <table class="table border-0 mx-auto">
                         <tr>
                             <td>
                                 Nama Wisata <br>
@@ -43,9 +46,17 @@
                         </tr>
                     </table>
                 </div>
+
+                <div class="col-sm-4 col-md-4 col-lg-4 border-1 border-black d-flex justify-content-center mb-2">
+                    <div class="row">
+                        <div class="col-sm-12 col-md-12 col-lg-12">
+                            <iframe src="{{ $wisata->wisata_maps }}" width="500" height="360" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                        </div>
+                    </div>
+                </div>
             </div>
 
-            <div class="row">
+            {{-- <div class="row">
                 <div class="col-sm-12 col-md-12 col-lg-12 border-1 border-black d-flex justify-content-center mb-2">
                     <h4>
                         Peta Lokasi
@@ -54,7 +65,7 @@
                 <div class="col-sm-12 col-md-12 col-lg-12 border-1 border-black d-flex justify-content-center mb-2">
                     <iframe src="{{ $wisata->wisata_maps }}" width="650" height="360" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
-            </div>
+            </div> --}}
 
             <div class="row">
                 <div class="col-sm-12 col-md-12 col-lg-12 mb-4 mt-4 d-flex justify-content-center">
@@ -70,7 +81,7 @@
                         <img class="card-img-top" src="{{ url('/') }}/{{ $item->produk_headergambar }}" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">{{ $item->produk_nama }}</h5>
-                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                            <p class="card-text">{{ Str::limit($item->produk_keterangan, 50) }}</p>
                         </div>
                     </div>
                 </div>
