@@ -20,7 +20,7 @@ class GenerateController extends Controller
     public function generate_media()
     {
         $media                          = new Media;
-        for ($i = 0; $i < 25; $i++) {
+        for ($i = 0; $i < 35; $i++) {
             $kodeMedia                  = strtoupper(Str::random(5));
             $saveMedia                  = $media->create([
                 'media_path'            => 'foto/default-wisata-foto.jpg',
@@ -34,7 +34,7 @@ class GenerateController extends Controller
             $saveMedia->save();
         }
 
-        for ($i = 0; $i < 25; $i++) {
+        for ($i = 0; $i < 35; $i++) {
             $kodeMedia                  = strtoupper(Str::random(5));
             $saveMedia                  = $media->create([
                 'media_path'            => 'foto/default-wisata-foto.jpg',
@@ -48,7 +48,7 @@ class GenerateController extends Controller
             $saveMedia->save();
         }
 
-        for ($i = 0; $i < 25; $i++) {
+        for ($i = 0; $i < 35; $i++) {
             $kodeMedia                  = strtoupper(Str::random(5));
             $saveMedia                  = $media->create([
                 'media_path'            => 'foto/default-produk.png',
@@ -62,7 +62,7 @@ class GenerateController extends Controller
             $saveMedia->save();
         }
 
-        for ($i = 0; $i < 25; $i++) {
+        for ($i = 0; $i < 35; $i++) {
             $kodeMedia                  = strtoupper(Str::random(5));
             $saveMedia                  = $media->create([
                 'media_path'            => 'foto/default-ukm-profile.png',
@@ -114,7 +114,7 @@ class GenerateController extends Controller
     public function generate_user_umkm()
     {
         $media                      = Media::where('media_kategori', 'user')->get()->toArray();
-        for ($i = 0; $i < 25; $i++) {
+        for ($i = 0; $i < 45; $i++) {
             $faker                  = Faker::create('id_ID');
             $randomMedia            = Arr::random($media);
             $login_model            = new Login;
@@ -172,7 +172,7 @@ class GenerateController extends Controller
         $userId                         = [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
         $provinsi                       = 'Sulawesi Tenggara';
         $media                          = Media::where('media_kategori', 'wisata')->get()->toArray();
-        for ($i = 0; $i < 45; $i++) {
+        for ($i = 0; $i < 15; $i++) {
             $randomMedia                = Arr::random($media);
             $randomUserId               = Arr::random($userId);
             $randomKategori             = Arr::random($kategori_wisata);
