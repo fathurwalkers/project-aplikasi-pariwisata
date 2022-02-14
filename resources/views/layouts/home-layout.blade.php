@@ -86,6 +86,7 @@
                                         @endphp
                                         @if ($users)
                                         <ul>
+                                            <li><a href="{{ route('home-english') }}" class="text-bold text-dark"> ENG </a></li>
                                             <li><a href="{{ route('dashboard') }}" class="text-bold text-dark"> {{ $users->login_nama }} </a></li>
 
                                         </ul>

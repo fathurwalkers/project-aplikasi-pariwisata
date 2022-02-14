@@ -86,8 +86,8 @@
                                         @endphp
                                         @if ($users)
                                         <ul>
+                                            <li><a href="{{ route('homepage') }}" class="text-bold text-dark"> IND </a></li>
                                             <li><a href="{{ route('dashboard') }}" class="text-bold text-dark"> {{ $users->login_nama }} </a></li>
-
                                         </ul>
                                         @else
                                         <ul>
