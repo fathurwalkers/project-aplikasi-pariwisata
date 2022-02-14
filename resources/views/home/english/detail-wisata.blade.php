@@ -51,6 +51,90 @@
                 </div>
             </div>
 
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="single_place">
+                        <div class="thumb">
+                            <img src="" alt="">
+                            <a href="#" class="prise">UKM</a>
+                        </div>
+                        <div class="place_info">
+                            <a href=""><h3>//////</h3></a>
+                            {{-- <p>Jl. Kolagana, Palabusa, Kec. Bungi, Kota Bau-Bau.</p> --}}
+                            <p>///</p>
+                            <div class="rating_days d-flex justify-content-between">
+                                {{-- <span class="d-flex justify-content-center align-items-center">
+                                     <i class="fa fa-star"></i>
+                                     <i class="fa fa-star"></i>
+                                     <i class="fa fa-star"></i>
+                                     <i class="fa fa-star"></i>
+                                     <i class="fa fa-star"></i>
+                                     <a href="#">(20 Review)</a>
+                                </span>
+                                <div class="days">
+                                    <i class="fa fa-clock-o"></i>
+                                    <a href="#">5 Days</a>
+                                </div> --}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="single_place">
+                        <div class="thumb">
+                            <img src="" alt="">
+                            <a href="#" class="prise">UKM</a>
+                        </div>
+                        <div class="place_info">
+                            <a href=""><h3>//////</h3></a>
+                            {{-- <p>Jl. Kolagana, Palabusa, Kec. Bungi, Kota Bau-Bau.</p> --}}
+                            <p>///</p>
+                            <div class="rating_days d-flex justify-content-between">
+                                {{-- <span class="d-flex justify-content-center align-items-center">
+                                     <i class="fa fa-star"></i>
+                                     <i class="fa fa-star"></i>
+                                     <i class="fa fa-star"></i>
+                                     <i class="fa fa-star"></i>
+                                     <i class="fa fa-star"></i>
+                                     <a href="#">(20 Review)</a>
+                                </span>
+                                <div class="days">
+                                    <i class="fa fa-clock-o"></i>
+                                    <a href="#">5 Days</a>
+                                </div> --}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="single_place">
+                        <div class="thumb">
+                            <img src="" alt="">
+                            <a href="#" class="prise">UKM</a>
+                        </div>
+                        <div class="place_info">
+                            <a href=""><h3>//////</h3></a>
+                            {{-- <p>Jl. Kolagana, Palabusa, Kec. Bungi, Kota Bau-Bau.</p> --}}
+                            <p>///</p>
+                            <div class="rating_days d-flex justify-content-between">
+                                {{-- <span class="d-flex justify-content-center align-items-center">
+                                     <i class="fa fa-star"></i>
+                                     <i class="fa fa-star"></i>
+                                     <i class="fa fa-star"></i>
+                                     <i class="fa fa-star"></i>
+                                     <i class="fa fa-star"></i>
+                                     <a href="#">(20 Review)</a>
+                                </span>
+                                <div class="days">
+                                    <i class="fa fa-clock-o"></i>
+                                    <a href="#">5 Days</a>
+                                </div> --}}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
         </div>
 
     </div>

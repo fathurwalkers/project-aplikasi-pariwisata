@@ -16,7 +16,7 @@ class CreateMediaWisatasTable extends Migration
 
             $table->unsignedBigInteger('wisata')->nullable()->default(null);
             $table->foreign('wisata')->references('id')->on('wisata')->onDelete('cascade');
-            
+
             $table->timestamps();
         });
     }

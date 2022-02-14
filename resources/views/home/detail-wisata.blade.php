@@ -51,6 +51,38 @@
                 </div>
             </div>
 
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12 mb-4 mt-4 d-flex justify-content-center">
+                    <h3>Produk yang ditawarkan</h3>
+                </div>
+            </div>
+            <div class="row mb-4">
+                <div class="col-sm-4 col-md-4 col-lg-4">
+                    <div class="card">
+                        <div class="card-body">
+                            vdd
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-4 col-md-4 col-lg-4">
+                    <div class="card">
+                        <div class="card-body">
+                            vdd
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-4 col-md-4 col-lg-4">
+                    <div class="card">
+                        <div class="card-body">
+                            vdd
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
         </div>
 
     </div>

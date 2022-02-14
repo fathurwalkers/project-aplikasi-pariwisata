@@ -12,7 +12,7 @@ class CreateKategorisTable extends Migration
             $table->id();
             $table->string('kategori_nama')->nullable();
             $table->string('kategori_kode')->nullable();
-            $table->string('kategori_tipe')->nullable(); // PRODUK - WISATA 
+            $table->string('kategori_tipe')->nullable(); // PRODUK - WISATA
             $table->timestamps();
         });
     }
