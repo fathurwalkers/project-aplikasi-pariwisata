@@ -1,5 +1,15 @@
 @extends('layouts.home-layout')
 
+@push('css')
+    <style>
+        .img-fix {
+            width: 100%!important; /* You can set the dimensions to whatever you want */
+            height: 200px!important;
+            object-fit: cover!important;
+        }
+    </style>
+@endpush
+
 @section('main-content')
 <div class="popular_places_area">
     <div class="container">
@@ -17,11 +27,11 @@
             <div class="col-lg-4 col-md-6">
                 <div class="single_place">
                     <div class="thumb">
-                        <img src="{{ asset('assets/pariwisata') }}/img/place/1.png" alt="">
-                        <a href="#" class="prise">{{ $item->umkm_foto }}</a>
+                        <img src="{{ asset('foto') }}/{{ $item->umkm_foto }}" alt="" class="img img-fix">
+                        {{-- <a href="#" class="prise">{{ $item->umkm_foto }}</a> --}}
                     </div>
                     <div class="place_info">
-                        <a href="{{ route('detail-wisata', $item->id) }}"><h3>{{ $item->umkm_nama }}</h3></a>
+                        <a href="#"><h3>{{ $item->umkm_nama }}</h3></a>
                         {{-- <p>Jl. Kolagana, Palabusa, Kec. Bungi, Kota Bau-Bau.</p> --}}
                         <p>Pemilik : {{ $item->umkm_pemilik }} / {{ $item->umkm_kode }}</p>
                         <div class="rating_days d-flex justify-content-between">

@@ -1,5 +1,15 @@
 @extends('layouts.home-layout')
 
+@push('css')
+    <style>
+        .img-fix {
+            width: 100%!important; /* You can set the dimensions to whatever you want */
+            height: 200px!important;
+            object-fit: cover!important;
+        }
+    </style>
+@endpush
+
 @section('main-content')
 <div class="card">
     <div class="card-body">
@@ -78,7 +88,7 @@
 
                 <div class="col-sm-4 col-md-4 col-lg-4 mb-4">
                     <div class="card" style="width: 18rem;">
-                        <img class="card-img-top" src="{{ url('/') }}/{{ $item->produk_headergambar }}" alt="Card image cap">
+                        <img class="card-img-top img-fix" src="{{ asset('foto') }}/{{ $item->produk_headergambar }}" alt="Card image cap">
                         <div class="card-body">
                             <h5 class="card-title">{{ $item->produk_nama }}</h5>
                             <p class="card-text">{{ Str::limit($item->produk_keterangan, 50) }}</p>
