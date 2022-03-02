@@ -9,13 +9,14 @@ use App\Models\Media;
 use App\Models\Login;
 use App\Models\Umkm;
 use App\Models\Wisata;
+use App\Models\Mediaproduk;
 
 class Produk extends Model
 {
     use HasFactory;
-    protected $table        = 'produk'; 
-    protected $primaryKey   = 'id'; 
-    protected $guarded      = []; 
+    protected $table        = 'produk';
+    protected $primaryKey   = 'id';
+    protected $guarded      = [];
 
     public function media()
     {
@@ -29,6 +30,11 @@ class Produk extends Model
 
     public function umkm()
     {
-        return $this->belongsTo(Umkm::class); 
+        return $this->belongsTo(Umkm::class);
+    }
+
+    public function mediaproduk()
+    {
+        return $this->hasMany(Mediaproduk::class);
     }
 }

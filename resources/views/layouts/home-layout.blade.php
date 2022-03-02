@@ -28,6 +28,7 @@
 
     <link rel="stylesheet" href="{{ asset('assets/pariwisata') }}/css/style.css">
     <!-- <link rel="stylesheet" href="css/responsive.css"> -->
+    @stack('css')
 </head>
 
 <body>
@@ -318,6 +319,7 @@
          }
         });
     </script>
+        @stack('js')
 </body>
 
 </html>

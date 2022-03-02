@@ -1,5 +1,15 @@
 @extends('layouts.home-layout')
 
+@push('css')
+    <style>
+        .img-fix {
+            width: 100%!important; /* You can set the dimensions to whatever you want */
+            height: 200px!important;
+            object-fit: cover!important;
+        }
+    </style>
+@endpush
+
 @section('main-content')
 {{-- <div class="slider_area">
     <div class="slider_active owl-carousel">
@@ -98,7 +108,7 @@
             <div class="col-lg-4 col-md-6">
                 <div class="single_place">
                     <div class="thumb">
-                        <img src="{{ asset('assets/pariwisata') }}/img/place/1.png" alt="">
+                        <img src="{{ asset('foto') }}/{{ $wis->wisata_header_foto }}" alt="" class="img img-fix">
                         <a href="#" class="prise">{{ $wis->wisata_kota }}</a>
                     </div>
                     <div class="place_info">

@@ -14,13 +14,14 @@ use App\Models\Kategori;
 use App\Models\Wisata;
 use App\Models\Umkm;
 use App\Models\Media;
+use App\Models\Mediaproduk;
 
 class GenerateController extends Controller
 {
     public function generate_media()
     {
         $media                          = new Media;
-        for ($i = 0; $i < 35; $i++) {
+        for ($i = 0; $i < 25; $i++) {
             $kodeMedia                  = strtoupper(Str::random(5));
             $saveMedia                  = $media->create([
                 'media_path'            => 'foto/default-wisata-foto.jpg',
@@ -34,7 +35,7 @@ class GenerateController extends Controller
             $saveMedia->save();
         }
 
-        for ($i = 0; $i < 35; $i++) {
+        for ($i = 0; $i < 25; $i++) {
             $kodeMedia                  = strtoupper(Str::random(5));
             $saveMedia                  = $media->create([
                 'media_path'            => 'foto/default-wisata-foto.jpg',
@@ -48,7 +49,7 @@ class GenerateController extends Controller
             $saveMedia->save();
         }
 
-        for ($i = 0; $i < 35; $i++) {
+        for ($i = 0; $i < 25; $i++) {
             $kodeMedia                  = strtoupper(Str::random(5));
             $saveMedia                  = $media->create([
                 'media_path'            => 'foto/default-produk.png',
@@ -62,7 +63,7 @@ class GenerateController extends Controller
             $saveMedia->save();
         }
 
-        for ($i = 0; $i < 35; $i++) {
+        for ($i = 0; $i < 25; $i++) {
             $kodeMedia                  = strtoupper(Str::random(5));
             $saveMedia                  = $media->create([
                 'media_path'            => 'foto/default-ukm-profile.png',
@@ -114,7 +115,7 @@ class GenerateController extends Controller
     public function generate_user_umkm()
     {
         $media                      = Media::where('media_kategori', 'user')->get()->toArray();
-        for ($i = 0; $i < 45; $i++) {
+        for ($i = 0; $i < 25; $i++) {
             $faker                  = Faker::create('id_ID');
             $randomMedia            = Arr::random($media);
             $login_model            = new Login;
@@ -172,7 +173,7 @@ class GenerateController extends Controller
         $userId                         = [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16];
         $provinsi                       = 'Sulawesi Tenggara';
         $media                          = Media::where('media_kategori', 'wisata')->get()->toArray();
-        for ($i = 0; $i < 15; $i++) {
+        for ($i = 0; $i < 20; $i++) {
             $randomMedia                = Arr::random($media);
             $randomUserId               = Arr::random($userId);
             $randomKategori             = Arr::random($kategori_wisata);
@@ -233,7 +234,7 @@ class GenerateController extends Controller
         $umkm                           = Umkm::all()->toArray();
         $produk_header_gambar           = 'foto/default-wisata-foto.jpg';
         $media                          = Media::where('media_kategori', 'produk')->get()->toArray();
-        for ($i = 0; $i < 100; $i++) {
+        for ($i = 0; $i < 50; $i++) {
             $randomMedia                = Arr::random($media);
             $kode_produk                = Str::random(5);
             $randomKategori             = Arr::random($kategori_produk);
@@ -256,6 +257,33 @@ class GenerateController extends Controller
         }
     }
 
+    public function generate_media_produk()
+    {
+        $faker                          = Faker::create('id_ID');
+
+        for ($i=0; $i < 100; $i++) {
+            $produk = Produk::all()->toArray();
+            $media_produk = new Mediaproduk;
+            $arr_media_produk = [
+                "media-produk1.jpg",
+                "media-produk2.jpg",
+                "media-produk3.jpg",
+                "media-produk4.jpg",
+                "media-produk5.jpg"
+            ];
+            $random_media_produk = Arr::random($arr_media_produk);
+            $random_produk = Arr::random($produk);
+
+            $save_media_produk = $media_produk->create([
+                'media_produk_nama' => $random_media_produk,
+                'created_at' => now(),
+                'updated_at' => now()
+            ]);
+            $save_media_produk->produk()->associate($random_produk["id"]);
+            $save_media_produk->save();
+        }
+    }
+
     public function chained_generate()
     {
         $this->generate_media();
@@ -264,6 +292,7 @@ class GenerateController extends Controller
         $this->generate_wisata();
         $this->generate_umkm();
         $this->generate_produk();
+        $this->generate_media_produk();
         return redirect()->route('dashboard');
     }
 }

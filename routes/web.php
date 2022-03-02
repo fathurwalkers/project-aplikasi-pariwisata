@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BackController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\GenerateController;
+use App\Http\Controllers\GeneratedataController;
 use App\Http\Controllers\UmkmController;
 use App\Http\Controllers\TestController;
 use App\Http\Controllers\ProdukController;
@@ -92,6 +93,7 @@ Route::group(['prefix' => '/dashboard', 'middleware' => 'ceklogin'], function ()
     Route::get('/generate-wisata', [GenerateController::class, 'generate_wisata'])->name('generate-wisata');
     Route::get('/generate-umkm', [GenerateController::class, 'generate_umkm'])->name('generate-umkm');
     Route::get('/generate-produk', [GenerateController::class, 'generate_produk'])->name('generate-produk');
+    Route::get('/generate-media-produk', [GenerateController::class, 'generate_media_produk'])->name('generate-media-produk');
     Route::get('/chained-generate', [GenerateController::class, 'chained_generate'])->name('chained-generate');
 });
 
@@ -101,3 +103,5 @@ Route::post('/post-login', [LoginController::class, 'post_login'])->name('post-l
 Route::get('/register', [LoginController::class, 'register'])->name('register');
 Route::post('/post-register', [LoginController::class, 'post_register'])->name('post-register');
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
+
+Route::get('/generate/data-wisata', [GeneratedataController::class, 'data_wisata'])->name('generate-data-wisata');

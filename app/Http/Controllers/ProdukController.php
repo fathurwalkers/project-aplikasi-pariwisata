@@ -21,7 +21,6 @@ class ProdukController extends Controller
         $session_users  = session('data_login');
         $users          = Login::find($session_users->id);
         $produk_admin   = Produk::all();
-        // $produk_umkm    = Produk::where('umkm_id', $umkm->id)->get();
         switch ($users->login_level) {
             case 'admin':
                 return view('admin.daftar-produk-admin', [

@@ -13,31 +13,31 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         // ADMIN
-        $token = Str::random(16);
-        $role = "admin";
-        $hashPassword = Hash::make('jancok', [
-            'rounds' => 12,
-        ]);
-        $hashToken = Hash::make($token, [
-            'rounds' => 12,
-        ]);
-        Login::create([
-            'login_foto' => 'foto/default-user.png',
-            'login_nama' => 'FathurWalkers',
-            'login_username' => 'fathurwalkers',
-            'login_password' => $hashPassword,
-            'login_email' => 'fathurwalkers44@gmail.com',
-            'login_telepon' => '085342072185',
-            'login_token' => $hashToken,
-            'login_level' => $role,
-            'login_status' => "verified",
-            'created_at' => now(),
-            'updated_at' => now()
-        ]);
+        // $token = Str::random(16);
+        // $role = "admin";
+        // $hashPassword = Hash::make('jancok', [
+        //     'rounds' => 12,
+        // ]);
+        // $hashToken = Hash::make($token, [
+        //     'rounds' => 12,
+        // ]);
+        // Login::create([
+        //     'login_foto' => 'foto/default-user.png',
+        //     'login_nama' => 'FathurWalkers',
+        //     'login_username' => 'fathurwalkers',
+        //     'login_password' => $hashPassword,
+        //     'login_email' => 'fathurwalkers44@gmail.com',
+        //     'login_telepon' => '085342072185',
+        //     'login_token' => $hashToken,
+        //     'login_level' => $role,
+        //     'login_status' => "verified",
+        //     'created_at' => now(),
+        //     'updated_at' => now()
+        // ]);
 
         $token = Str::random(16);
         $role = "admin";
-        $hashPassword = Hash::make('11223344', [
+        $hashPassword = Hash::make('citra', [
             'rounds' => 12,
         ]);
         $hashToken = Hash::make($token, [
@@ -49,6 +49,29 @@ class DatabaseSeeder extends Seeder
             'login_username' => 'citra',
             'login_password' => $hashPassword,
             'login_email' => 'citra@gmail.com',
+            'login_telepon' => '0812820932323',
+            'login_token' => $hashToken,
+            'login_level' => $role,
+            'login_status' => "verified",
+            'created_at' => now(),
+            'updated_at' => now()
+        ]);
+
+
+        $token = Str::random(16);
+        $role = "admin";
+        $hashPassword = Hash::make('admin', [
+            'rounds' => 12,
+        ]);
+        $hashToken = Hash::make($token, [
+            'rounds' => 12,
+        ]);
+        Login::create([
+            'login_foto' => 'foto/default-user.png',
+            'login_nama' => 'Administrator',
+            'login_username' => 'admin',
+            'login_password' => $hashPassword,
+            'login_email' => 'administrator@gmail.com',
             'login_telepon' => '0812820932323',
             'login_token' => $hashToken,
             'login_level' => $role,
@@ -169,6 +192,6 @@ class DatabaseSeeder extends Seeder
                 'updated_at'        => now()
             ]);
         }
-        // 
+        //
     }
 }
