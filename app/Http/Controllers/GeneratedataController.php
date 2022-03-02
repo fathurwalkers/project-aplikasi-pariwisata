@@ -76,6 +76,17 @@ class GeneratedataController extends Controller
                 "wisata_maps" => "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3972.27480030356!2d122.98161651399856!3d-5.375002896101305!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2da3f8ac2d0c8715%3A0xcf9918cacf213e46!2sAir%20Terjun%20Kalata%2C%20Buton!5e0!3m2!1sen!2sid!4v1646223597391!5m2!1sen!2sid",
                 "wisata_header_foto" => "wisata5.jpg"
             ],
+            [
+                "wisata_nama" => "Kampung Bajo Bahari",
+                "wisata_deskripsi" => "<p>Perkampungan Bajo dengan kondisi rumah, sarana umum dan bangunan pemerintah terapung. Ketika berada perkampungan ini kita akan merasakan kehidupan sosial suku BAjo. Ativitas masyarakat banyak dihabiskan di atas laut denga jembatan penghubung antara rumah yang satu dengan yang lain menggunakan papan dan balok kayu adalah pemandangan yang dapat kita saksikan ketika berada disini. Sempat popular dengan nama kampung pelangi ketika rumah dan bangunan sarana umum dicat berwarna pelangi</p>",
+                "wisata_kota" => "Bajo",
+                "wisata_kecamatan" => "Wabula",
+                "wisata_kelurahan" => "Bahari",
+                "wisata_provinsi" => "Buton",
+                "wisata_url" => Str::random(10),
+                "wisata_maps" => "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3971.0271042270783!2d122.89294221399972!3d-5.5630006959666485!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2da4107edb341965%3A0x544646e143996bbb!2sKampung%20Pelangi%20Bajo%20Bahari%20Buton!5e0!3m2!1sen!2sid!4v1646233399389!5m2!1sen!2sid",
+                "wisata_header_foto" => "wisata6.jpg"
+            ]
         ];
 
         for ($i=0; $i < count($arr_wisata); $i++) {
@@ -100,13 +111,54 @@ class GeneratedataController extends Controller
         }
     }
 
+    public function data_user_ukm()
+    {
+        $arr_nama_ukm = ["Mawar", "Abon Tuna Kahomlimombono Buton", "Matteku", "Sarang Tenun Wabula", "Sarung Tenun Wasuemba", "Kripik Sukun Khas Wabula"];
+
+        for ($i=0; $i < count($arr_nama_ukm); $i++) {
+            $login = new Login;
+            $save_login = $login->create([
+                'login_foto'        => "default-user.png",
+                'login_nama'        => $faker->name,
+                'login_username'    => 'user_umkm' . $i . strtoupper(Str::random(5)),
+                'login_password'    => $hashPassword,
+                'login_email'       => $faker->email,
+                'login_telepon'     => $faker->phoneNumber,
+                'login_token'       => $token,
+                'login_level'       => $level,
+                'login_status'      => $login_status,
+                'created_at'        => now(),
+                'updated_at'        => now()
+            ]);
+        }
+    }
+
     public function data_ukm()
     {
-        $arr_nama_ukm = ["Mawar", "Abon Tuna Kahomlimombono Buton", "Matteku", "Sarang Tenun Wabula", "Sarung Tenun Wasuemba", "Kripik Sukun Khas Wabula"
-        ];
+        // $arr_nama_ukm = ["Mawar", "Abon Tuna Kahomlimombono Buton", "Matteku", "Sarang Tenun Wabula", "Sarung Tenun Wasuemba", "Kripik Sukun Khas Wabula"
+        // ];
+        // $arr_keterangan_ukm = [
+        //     "Gule merupakan makanan tradisional Khas Buton dengan bahan dasar ubi kayu/singkong yang digiling (Kaopi). Masa Exp. 3 Bulan",
+        //     "Produksi abon ini tidak menentu tergantung pesanan dan harga ikan.",
+        //     "Jambu metteku terdapat pilihan rasa origina, balado, coklat, gula merah",
+        //     "Sarung dibuat dengan benang halus. Dan dapat dibuat sesuai pesanan. Pengerjaan satu sarung dilakukan selama 1 minggu tergantung rumitnya motif",
+        //     "Sarung dibuat dengan benang Biasa. Dan dapat dibuat sesuai pesanan. Pengerjaan satu sarung dilakukan selama 1 minggu",
+        //     "Kripik di buat dari sukun yang masih mudah dan di goreng. Kripik sukun khas wabula 1 ini memiliki 3 pilihan rasa yaitu Original, pedas, dan manis. Masa Exp. 3 bulan"
+        // ];
 
         // for ($i=0; $i < count($arr_nama_ukm); $i++) {
-        //     //
+
+        //     $umkm = new Umkm;
+        //     $save_umkm = $umkm->create([
+        //         "umkm_nama" => $arr_nama_ukm[$i],
+        //         "umkm_kode" => strtoupper(Str::random(5)),
+        //         "umkm_info" => $arr_keterangan_ukm[$i],
+        //         "umkm_foto" => "default-ukm-profile.jpg",
+        //         "umkm_pemilik" => ,
+        //         "created_at" => now(),
+        //         "updated_at" => now()
+        //     ]);
+
         // }
     }
 }
