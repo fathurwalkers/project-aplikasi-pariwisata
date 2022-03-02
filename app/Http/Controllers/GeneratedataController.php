@@ -20,6 +20,7 @@ class GeneratedataController extends Controller
 {
     public function data_wisata()
     {
+        $faker                          = Faker::create('id_ID');
         $arr_wisata = [
             [
                 "wisata_nama" => "Air Terjun Kandawundawuna",
@@ -167,8 +168,8 @@ class GeneratedataController extends Controller
                 'login_nama'        => $arr_nama_ukm[$i],
                 'login_username'    => $username,
                 'login_password'    => $hashPassword,
-                'login_email'       => $faker->email,
-                'login_telepon'     => $faker->phoneNumber,
+                'login_email'       => "TIDAK ADA",
+                'login_telepon'     => "TIDAK ADA",
                 'login_token'       => $token,
                 'login_level'       => $level,
                 'login_status'      => $login_status,
@@ -181,6 +182,7 @@ class GeneratedataController extends Controller
             // UKM
             $ukm                    = new Umkm;
             $wisata                 = Wisata::all()->toArray();
+            $random_wisata          = Arr::random($wisata);
 
             $kode_ukm               = "UKM-" . strtoupper(Str::random(5));
             $save_ukm               = $ukm->create([
@@ -193,7 +195,7 @@ class GeneratedataController extends Controller
                 "updated_at"        => now()
             ]);
             $save_ukm->login()->associate($save_login->id);
-            $save_ukm->wisata()->associate($wisata["id"]);
+            $save_ukm->wisata()->associate($random_wisata["id"]);
             $save_ukm->save();
             // END UKM
 
