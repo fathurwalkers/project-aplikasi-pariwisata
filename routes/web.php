@@ -104,4 +104,4 @@ Route::get('/register', [LoginController::class, 'register'])->name('register');
 Route::post('/post-register', [LoginController::class, 'post_register'])->name('post-register');
 Route::post('/logout', [LoginController::class, 'logout'])->name('logout');
 
-Route::get('/generate/data-wisata', [GeneratedataController::class, 'data_wisata'])->name('generate-data-wisata');
+Route::get('/generate/chained-data-generate', [GeneratedataController::class, 'chained_data_generate'])->name('chained-data-generate');

@@ -111,16 +111,61 @@ class GeneratedataController extends Controller
         }
     }
 
-    public function data_user_ukm()
+    public function data_ukm()
     {
-        $arr_nama_ukm = ["Mawar", "Abon Tuna Kahomlimombono Buton", "Matteku", "Sarang Tenun Wabula", "Sarung Tenun Wasuemba", "Kripik Sukun Khas Wabula"];
+        $arr_nama_ukm               = ["Mawar", "Abon Tuna Kahomlimombono Buton", "Matteku", "Sarang Tenun Wabula", "Sarung Tenun Wasuemba", "Kripik Sukun Khas Wabula"];
+        $arr_keterangan = [
+            "Gule merupakan makanan tradisional Khas Buton dengan bahan dasar ubi kayu/singkong yang digiling (Kaopi). Masa Exp. 3 Bulan",
+            "Produksi abon ini tidak menentu tergantung pesanan dan harga ikan.",
+            "Jambu metteku terdapat pilihan rasa origina, balado, coklat, gula merah",
+            "Sarung dibuat dengan benang halus. Dan dapat dibuat sesuai pesanan. Pengerjaan satu sarung dilakukan selama 1 minggu tergantung rumitnya motif",
+            "Sarung dibuat dengan benang Biasa. Dan dapat dibuat sesuai pesanan. Pengerjaan satu sarung dilakukan selama 1 minggu",
+            "Kripik di buat dari sukun yang masih mudah dan di goreng. Kripik sukun khas wabula 1 ini memiliki 3 pilihan rasa yaitu Original, pedas, dan manis. Masa Exp. 3 bulan"
+        ];
+        $arr_gambar_produk          = [
+            "data-gambar-produk1.jpg",
+            "data-gambar-produk2.jpg",
+            "data-gambar-produk3.jpg",
+            "data-gambar-produk4.jpg",
+            "data-gambar-produk5.jpg",
+            "data-gambar-produk6.jpg"
+        ];
+        $arr_nama_produk = [
+            "Gule",
+            "Abon Tuna",
+            "Olahan Jambu Mette",
+            "Sarung Tenun Motif",
+            "Saring Tenun Perempuan",
+            "Kripik Sukun"
+        ];
+        $arr_harga = [
+            2500,
+            25000,
+            100000,
+            350000,
+            350000,
+            25000
+        ];
 
         for ($i=0; $i < count($arr_nama_ukm); $i++) {
-            $login = new Login;
-            $save_login = $login->create([
+
+            // USER UMKM
+            $login                  = new Login;
+            $username               = "user" . $i . strtoupper(Str::random(5));
+            $password               = '12345';
+            $hashPassword           = Hash::make($password, [
+                'rounds' => 12,
+            ]);
+            $token_raw              = Str::random(16);
+            $token                  = Hash::make($token_raw, [
+                'rounds' => 12,
+            ]);
+            $level                  = "umkm";
+            $login_status           = "verified";
+            $save_login             = $login->create([
                 'login_foto'        => "default-user.png",
-                'login_nama'        => $faker->name,
-                'login_username'    => 'user_umkm' . $i . strtoupper(Str::random(5)),
+                'login_nama'        => $arr_nama_ukm[$i],
+                'login_username'    => $username,
                 'login_password'    => $hashPassword,
                 'login_email'       => $faker->email,
                 'login_telepon'     => $faker->phoneNumber,
@@ -130,35 +175,51 @@ class GeneratedataController extends Controller
                 'created_at'        => now(),
                 'updated_at'        => now()
             ]);
+            // END USER UMKM
+
+
+            // UKM
+            $ukm                    = new Umkm;
+            $wisata                 = Wisata::all()->toArray();
+
+            $kode_ukm               = "UKM-" . strtoupper(Str::random(5));
+            $save_ukm               = $ukm->create([
+                "umkm_nama"         => $save_login->login_nama,
+                "umkm_kode"         => $kode_ukm,
+                "umkm_info"         => $arr_keterangan[$i],
+                "umkm_foto"         => "default-ukm-profile.png",
+                "umkm_pemilik"      => $save_login->login_nama,
+                "created_at"        => now(),
+                "updated_at"        => now()
+            ]);
+            $save_ukm->login()->associate($save_login->id);
+            $save_ukm->wisata()->associate($wisata["id"]);
+            $save_ukm->save();
+            // END UKM
+
+
+            // PRODUK
+            $produk                     = new Produk;
+            $kode_produk                = "PRODUK-" . Str::random(5);
+            $saveProduk                 = $produk->create([
+                'produk_headergambar'   => $arr_gambar_produk[$i],
+                'produk_nama'           => $arr_nama_produk[$i],
+                'produk_kode'           => $kode_produk,
+                'produk_keterangan'     => $arr_keterangan[$i],
+                'produk_harga'          => $arr_harga[$i],
+                'created_at'            => now(),
+                'updated_at'            => now()
+            ]);
+            $saveProduk->kategori()->associate(16);
+            $saveProduk->umkm()->associate($save_ukm->id);
+            $saveProduk->save();
         }
     }
 
-    public function data_ukm()
+    public function chained_data_generate()
     {
-        // $arr_nama_ukm = ["Mawar", "Abon Tuna Kahomlimombono Buton", "Matteku", "Sarang Tenun Wabula", "Sarung Tenun Wasuemba", "Kripik Sukun Khas Wabula"
-        // ];
-        // $arr_keterangan_ukm = [
-        //     "Gule merupakan makanan tradisional Khas Buton dengan bahan dasar ubi kayu/singkong yang digiling (Kaopi). Masa Exp. 3 Bulan",
-        //     "Produksi abon ini tidak menentu tergantung pesanan dan harga ikan.",
-        //     "Jambu metteku terdapat pilihan rasa origina, balado, coklat, gula merah",
-        //     "Sarung dibuat dengan benang halus. Dan dapat dibuat sesuai pesanan. Pengerjaan satu sarung dilakukan selama 1 minggu tergantung rumitnya motif",
-        //     "Sarung dibuat dengan benang Biasa. Dan dapat dibuat sesuai pesanan. Pengerjaan satu sarung dilakukan selama 1 minggu",
-        //     "Kripik di buat dari sukun yang masih mudah dan di goreng. Kripik sukun khas wabula 1 ini memiliki 3 pilihan rasa yaitu Original, pedas, dan manis. Masa Exp. 3 bulan"
-        // ];
-
-        // for ($i=0; $i < count($arr_nama_ukm); $i++) {
-
-        //     $umkm = new Umkm;
-        //     $save_umkm = $umkm->create([
-        //         "umkm_nama" => $arr_nama_ukm[$i],
-        //         "umkm_kode" => strtoupper(Str::random(5)),
-        //         "umkm_info" => $arr_keterangan_ukm[$i],
-        //         "umkm_foto" => "default-ukm-profile.jpg",
-        //         "umkm_pemilik" => ,
-        //         "created_at" => now(),
-        //         "updated_at" => now()
-        //     ]);
-
-        // }
+        $this->data_wisata();
+        $this->data_ukm();
+        return redirect()->route('homepage');
     }
 }
