@@ -7,6 +7,10 @@
             height: 200px!important;
             object-fit: cover!important;
         }
+
+        .fix-text {
+        font-size: 15px!important;
+    }
     </style>
 @endpush
 
@@ -99,8 +103,40 @@
                         <div class="card" style="width: 18rem;">
                             <img class="card-img-top img-fix" src="{{ asset('foto') }}/{{ $item->produk_headergambar }}" alt="Card image cap">
                             <div class="card-body">
-                                <h5 class="card-title">{{ $item->produk_nama }}</h5>
+                                <h5 class="card-title">
+                                    <a href="#" class="link"  data-toggle="modal" data-target="#modaldetailproduk{{ $item->id }}" ></a> {{ $item->produk_nama }}
+                                </h5>
                                 <p class="card-text">{{ Str::limit($item->produk_keterangan, 50) }}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    {{-- MODAL --}}
+                    <div class="modal fade" id="modaldetailproduk{{ $item->id }}" tabindex="1" role="dialog" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+
+                                <div class="modal-header">
+                                    <h4 class="modal-title">Detail Informasi Produk - {{ $item->nama }}</h4>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+
+                                <div class="modal-body">
+                                    <div class="row">
+                                        <div class="col-sm-4 col-md-4 col-lg-4">
+                                            <h5 class="fix-text">Nama Produk </h5>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="modal-footer">
+                                    <button type="button" class="btn gray btn-outline-secondary" data-dismiss="modal">Cancel</button>
+                                    <button type="submit" class="btn btn-outline-danger" >
+                                        Delete
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
