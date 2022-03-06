@@ -47,8 +47,6 @@ class HomeController extends Controller
         $arr_umkm               = [];
         $arr_produk             = [];
 
-        // dump($arr_umkm);
-
         foreach ($umkm as $item) {
             $arr_umkm = Arr::prepend($arr_umkm, $item);
         }
@@ -60,9 +58,6 @@ class HomeController extends Controller
                 $arr_produk = Arr::prepend($arr_produk, $val);
             }
         }
-
-        // $produk = collect($arr_produk)->paginate(5);
-        // dd($produk);
 
         $produk = $arr_produk;
 
@@ -112,8 +107,29 @@ class HomeController extends Controller
     public function english_detail_wisata($id)
     {
         $wisata                 = Wisata::find($id);
+        $umkm                   = Umkm::where('wisata_id', $wisata->id)->get();
+        $arr_umkm               = [];
+        $arr_produk             = [];
+
+        // dump($arr_umkm);
+
+        foreach ($umkm as $item) {
+            $arr_umkm = Arr::prepend($arr_umkm, $item);
+        }
+        $countumkm = count($arr_umkm);
+
+        for ($i=0; $i < $countumkm; $i++) {
+            $product = Produk::where('umkm_id', $arr_umkm[$i]["id"])->get();
+            foreach ($product as $val) {
+                $arr_produk = Arr::prepend($arr_produk, $val);
+            }
+        }
+
+        $produk = $arr_produk;
+
         return view('home.english.detail-wisata', [
-            'wisata'            => $wisata
+            'wisata'            => $wisata,
+            'produk'            => $produk
         ]);
     }
 

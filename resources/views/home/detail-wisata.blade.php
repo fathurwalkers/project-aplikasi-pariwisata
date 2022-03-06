@@ -19,63 +19,70 @@
             <div class="row d-flex justify-content-center">
                 <div class="col-sm-12 col-md-12 col-lg-12 border-1 border-black d-flex justify-content-center mb-2">
                     <h4>
-                        Galeri Wisata
+                        Banner Wisata
                     </h4>
                 </div>
-                <div class="col-sm-6 col-md-6 col-lg-6 d-flex justify-content-center">
-                    <img class="img img-responsive d-flex justify-content-center" src="{{ url('/') }}/{{ $wisata->wisata_header_foto }}" alt="" width="300px">
+            </div>
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12 d-flex justify-content-center">
+                    <img class="img img-thumbnail img-responsive d-flex justify-content-center" src="{{ asset('/foto') }}/{{ $wisata->wisata_header_foto }}" alt="" width="400px">
                 </div>
             </div>
 
-            <div class="row">
-                <div class="col-sm-12 col-md-12 col-lg-12 mb-4 mt-4 d-flex justify-content-center">
-                    <h3>Informasi Wisata</h3>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-8 col-md-8 col-lg-8 border-1 border-black">
+            <hr />
+
+            <div class="row mb-2">
+                <div class="col-sm-12 col-md-12 col-lg-12 border-1 border-black">
                     <h4 class="text-center">
                         Tentang Wisata
                     </h4>
-                    <table class="table border-0 mx-auto">
-                        <tr>
-                            <td>
-                                Nama Wisata <br>
-                                Provinsi  <br>
-                                Kota / Kabupaten <br>
-                                Kecamatan <br>
-                                Kelurahan / Desa <br>
-                            </td>
-                            <td>
-                                : &nbsp; {{ $wisata->wisata_nama }} <br>
-                                : &nbsp; {{ $wisata->wisata_provinsi }} <br>
-                                : &nbsp; {{ $wisata->wisata_kota }} <br>
-                                : &nbsp; {{ $wisata->wisata_kecamatan }} <br>
-                                : &nbsp; {{ $wisata->wisata_kelurahan }} <br>
-                            </td>
-                        </tr>
-                    </table>
+                </div>
+            </div>
+            <div class="row border border-1 border-black py-2 mb-2">
+                <div class="col-sm-3 col-md-3 col-lg-3">
+
+                </div>
+                <div class="col-sm-3 col-md-3 col-lg-3">
+                    <h5> Nama Wisata </h5>
+                    <h5> Provinsi </h5>
+                    <h5> Kota / Kabupaten </h5>
+                    <h5> Kecamatan </h5>
+                    <h5> Kelurahan / Desa </h5>
                 </div>
 
-                <div class="col-sm-4 col-md-4 col-lg-4 border-1 border-black d-flex justify-content-center mb-2">
+                <div class="col-sm-3 col-md-3 col-lg-3">
+                    <h5> : &nbsp; {{ $wisata->wisata_nama }} </h5>
+                    <h5> : &nbsp; {{ $wisata->wisata_provinsi }} </h5>
+                    <h5> : &nbsp; {{ $wisata->wisata_kota }} </h5>
+                    <h5> : &nbsp; {{ $wisata->wisata_kecamatan }} </h5>
+                    <h5> : &nbsp; {{ $wisata->wisata_kelurahan }} </h5>
+                </div>
+                <div class="col-sm-3 col-md-3 col-lg-3">
+
+                </div>
+            </div>
+
+            <hr />
+
+            <div class="row mb-2 mt-2">
+                <div class="col-sm-12 col-md-12 col-lg-12 border-1 border-black">
+                    <h4 class="text-center">
+                        Peta Lokasi
+                    </h4>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12 border-1 border-black d-flex justify-content-center mb-2">
                     <div class="row">
                         <div class="col-sm-12 col-md-12 col-lg-12">
-                            <iframe src="{{ $wisata->wisata_maps }}" width="500" height="360" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                            <iframe src="{{ $wisata->wisata_maps }}" width="950" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                         </div>
                     </div>
                 </div>
             </div>
 
-            {{-- <div class="row">
-                <div class="col-sm-12 col-md-12 col-lg-12 border-1 border-black d-flex justify-content-center mb-2">
-                    <h4>
-                        Peta Lokasi
-                    </h4>
-                </div>
-                <div class="col-sm-12 col-md-12 col-lg-12 border-1 border-black d-flex justify-content-center mb-2">
-                    <iframe src="{{ $wisata->wisata_maps }}" width="650" height="360" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                </div>
-            </div> --}}
+            <hr />
 
             <div class="row">
                 <div class="col-sm-12 col-md-12 col-lg-12 mb-4 mt-4 d-flex justify-content-center">

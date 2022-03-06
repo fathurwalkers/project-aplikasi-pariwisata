@@ -19,67 +19,74 @@
             <div class="row d-flex justify-content-center">
                 <div class="col-sm-12 col-md-12 col-lg-12 border-1 border-black d-flex justify-content-center mb-2">
                     <h4>
-                        Gallery
+                        Banner Cover
                     </h4>
                 </div>
-                <div class="col-sm-6 col-md-6 col-lg-6 d-flex justify-content-center">
-                    <img class="img img-responsive d-flex justify-content-center" src="{{ url('/') }}/{{ $wisata->wisata_header_foto }}" alt="" width="300px">
+            </div>
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12 d-flex justify-content-center">
+                    <img class="img img-thumbnail img-responsive d-flex justify-content-center" src="{{ asset('/foto') }}/{{ $wisata->wisata_header_foto }}" alt="" width="400px">
                 </div>
             </div>
 
-            <div class="row">
-                <div class="col-sm-12 col-md-12 col-lg-12 mb-4 mt-4 d-flex justify-content-center">
-                    <h3>Information</h3>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col-sm-8 col-md-8 col-lg-8 border-1 border-black">
+            <hr />
+
+            <div class="row mb-2">
+                <div class="col-sm-12 col-md-12 col-lg-12 border-1 border-black">
                     <h4 class="text-center">
-                        About
+                        About Destination
                     </h4>
-                    <table class="table border-0 mx-auto">
-                        <tr>
-                            <td>
-                                Destination Name <br>
-                                Province  <br>
-                                City / District <br>
-                                District <br>
-                                Section <br>
-                            </td>
-                            <td>
-                                : &nbsp; {{ $wisata->wisata_nama }} <br>
-                                : &nbsp; {{ $wisata->wisata_provinsi }} <br>
-                                : &nbsp; {{ $wisata->wisata_kota }} <br>
-                                : &nbsp; {{ $wisata->wisata_kecamatan }} <br>
-                                : &nbsp; {{ $wisata->wisata_kelurahan }} <br>
-                            </td>
-                        </tr>
-                    </table>
+                </div>
+            </div>
+            <div class="row border border-1 border-black py-2 mb-2">
+                <div class="col-sm-3 col-md-3 col-lg-3">
+
+                </div>
+                <div class="col-sm-3 col-md-3 col-lg-3">
+                    <h5> Destination Name </h5>
+                    <h5> Province </h5>
+                    <h5> City </h5>
+                    <h5> District </h5>
+                    <h5> Block </h5>
                 </div>
 
-                <div class="col-sm-4 col-md-4 col-lg-4 border-1 border-black d-flex justify-content-center mb-2">
+                <div class="col-sm-3 col-md-3 col-lg-3">
+                    <h5> : &nbsp; {{ $wisata->wisata_nama }} </h5>
+                    <h5> : &nbsp; {{ $wisata->wisata_provinsi }} </h5>
+                    <h5> : &nbsp; {{ $wisata->wisata_kota }} </h5>
+                    <h5> : &nbsp; {{ $wisata->wisata_kecamatan }} </h5>
+                    <h5> : &nbsp; {{ $wisata->wisata_kelurahan }} </h5>
+                </div>
+                <div class="col-sm-3 col-md-3 col-lg-3">
+
+                </div>
+            </div>
+
+            <hr />
+
+            <div class="row mb-2 mt-2">
+                <div class="col-sm-12 col-md-12 col-lg-12 border-1 border-black">
+                    <h4 class="text-center">
+                        Maps
+                    </h4>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12 border-1 border-black d-flex justify-content-center mb-2">
                     <div class="row">
                         <div class="col-sm-12 col-md-12 col-lg-12">
-                            <iframe src="{{ $wisata->wisata_maps }}" width="500" height="360" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+                            <iframe src="{{ $wisata->wisata_maps }}" width="950" height="250" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                         </div>
                     </div>
                 </div>
             </div>
 
-            {{-- <div class="row">
-                <div class="col-sm-12 col-md-12 col-lg-12 border-1 border-black d-flex justify-content-center mb-2">
-                    <h4>
-                        Peta Lokasi
-                    </h4>
-                </div>
-                <div class="col-sm-12 col-md-12 col-lg-12 border-1 border-black d-flex justify-content-center mb-2">
-                    <iframe src="{{ $wisata->wisata_maps }}" width="650" height="360" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-                </div>
-            </div> --}}
+            <hr />
 
             <div class="row">
                 <div class="col-sm-12 col-md-12 col-lg-12 mb-4 mt-4 d-flex justify-content-center">
-                    <h3>Produk Offers</h3>
+                    <h3>Product Offers</h3>
                 </div>
             </div>
             <div class="row mb-4">
