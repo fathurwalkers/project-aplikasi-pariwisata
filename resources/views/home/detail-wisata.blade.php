@@ -48,7 +48,7 @@
                     </h4>
                 </div>
             </div>
-            <div class="row border border-1 border-black py-2 mb-2">
+            <div class="row border border-1 border-black py-2 mb-2 pt-4">
                 <div class="col-sm-3 col-md-3 col-lg-3">
 
                 </div>
@@ -69,6 +69,21 @@
                 </div>
                 <div class="col-sm-3 col-md-3 col-lg-3">
 
+                </div>
+
+                <div class="row d-flex justify-content-center mx-auto mt-4">
+                    <div class="col-sm-12 col-md-12 col-lg-12 justify-content-center mx-auto">
+                        <h5 class="fix-text text-center">Deskripsi Wisata</h5>
+                    </div>
+                </div>
+                <div class="row mb-3">
+                    <div class="col-sm-3 col-md-3 col-lg-3">
+                    </div>
+                    <div class="col-sm-6 col-md-6 col-lg-6">
+                        <span class="text-justify">{!! $wisata->wisata_deskripsi !!}</span>
+                    </div>
+                    <div class="col-sm-3 col-md-3 col-lg-3">
+                    </div>
                 </div>
             </div>
 
