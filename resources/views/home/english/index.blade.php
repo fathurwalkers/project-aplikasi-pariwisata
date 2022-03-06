@@ -1,5 +1,15 @@
 @extends('layouts.home-layout-english')
 
+@push('css')
+    <style>
+        .img-fix {
+            width: 100%!important; /* You can set the dimensions to whatever you want */
+            height: 200px!important;
+            object-fit: cover!important;
+        }
+    </style>
+@endpush
+
 @section('main-content')
 {{-- <div class="slider_area">
     <div class="slider_active owl-carousel">
@@ -87,8 +97,8 @@
         <div class="row justify-content-center">
             <div class="col-lg-6 mt-5">
                 <div class="section_title text-center mb_70">
-                    <h3>Tourist Destination</h3>
-                    <p>Destination listed on below</p>
+                    <h3>Tour Destination</h3>
+                    <p>Tour Destination on Buton, Sulawesi Tenggara</p>
                 </div>
             </div>
         </div>
@@ -98,11 +108,11 @@
             <div class="col-lg-4 col-md-6">
                 <div class="single_place">
                     <div class="thumb">
-                        <img src="{{ asset('assets/pariwisata') }}/img/place/1.png" alt="">
+                        <img src="{{ asset('foto') }}/{{ $wis->wisata_header_foto }}" alt="" class="img img-fix">
                         <a href="#" class="prise">{{ $wis->wisata_kota }}</a>
                     </div>
                     <div class="place_info">
-                        <a href="{{ route('detail-wisata', $wis->id) }}"><h3>{{ $wis->wisata_nama }}</h3></a>
+                        <a href="{{ route('english-detail-wisata', $wis->id) }}"><h3>{{ $wis->wisata_nama }}</h3></a>
                         {{-- <p>Jl. Kolagana, Palabusa, Kec. Bungi, Kota Bau-Bau.</p> --}}
                         <p>{{ $wis->wisata_kota }} / {{ $wis->wisata_kelurahan }} / {{ $wis->wisata_kecamatan }}</p>
                         <div class="rating_days d-flex justify-content-between">
