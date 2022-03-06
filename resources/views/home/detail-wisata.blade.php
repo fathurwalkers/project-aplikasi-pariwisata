@@ -90,27 +90,30 @@
                 </div>
             </div>
             <div class="row mb-4">
+                @if ($produk == null)
+                   <h4 class="text-center"> Belum ada produk di lokasi ini. </h4>
+                @else
+                    @foreach ($produk as $item)
 
-                @foreach ($produk as $item)
-
-                <div class="col-sm-4 col-md-4 col-lg-4 mb-4">
-                    <div class="card" style="width: 18rem;">
-                        <img class="card-img-top img-fix" src="{{ asset('foto') }}/{{ $item->produk_headergambar }}" alt="Card image cap">
-                        <div class="card-body">
-                            <h5 class="card-title">{{ $item->produk_nama }}</h5>
-                            <p class="card-text">{{ Str::limit($item->produk_keterangan, 50) }}</p>
+                    <div class="col-sm-4 col-md-4 col-lg-4 mb-4">
+                        <div class="card" style="width: 18rem;">
+                            <img class="card-img-top img-fix" src="{{ asset('foto') }}/{{ $item->produk_headergambar }}" alt="Card image cap">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ $item->produk_nama }}</h5>
+                                <p class="card-text">{{ Str::limit($item->produk_keterangan, 50) }}</p>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                @endforeach
+                    @endforeach
+                @endif
+            </div>
 
-                <div class="row">
-                    <div class="col-sm-12 col-md-12 col-lg-12 d-flex justify-content-center">
+            <div class="row">
+                <div class="col-sm-12 col-md-12 col-lg-12 d-flex justify-content-center">
                         {{-- {{ $produk->onEachSide(0)->links() }} --}}
                     </div>
                 </div>
-
             </div>
 
         </div>

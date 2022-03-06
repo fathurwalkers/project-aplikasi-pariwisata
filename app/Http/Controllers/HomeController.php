@@ -83,6 +83,15 @@ class HomeController extends Controller
         ]);
     }
 
+    public function detail_produk($id)
+    {
+        // $produk_id = $id;
+        // $produk = Produk::where('id', $produk_id)->firstOrFail();
+        // return view('home.detail-produk', [
+        //     'produk' => $produk
+        // ]);
+    }
+
     // =========================================================
 
     // ENGLISH

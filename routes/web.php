@@ -22,6 +22,7 @@ Route::group(['prefix' => '/'], function () {
     Route::get('/', [HomeController::class, 'index'])->name('homepage');
     Route::get('/test', [HomeController::class, 'test'])->name('format-layout');
     Route::get('/home/detail-wisata/{id}', [HomeController::class, 'detail_wisata'])->name('detail-wisata');
+    Route::get('/home/detail-produk/{id}', [HomeController::class, 'detail_produk'])->name('detail-produk');
     Route::get('/home/daftar-produk', [HomeController::class, 'daftar_produk'])->name('home-daftar-produk');
     Route::get('/home/daftar-ukm', [HomeController::class, 'daftar_umkm'])->name('home-daftar-ukm');
 
