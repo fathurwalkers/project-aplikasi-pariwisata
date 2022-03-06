@@ -7,6 +7,16 @@
             height: 200px!important;
             object-fit: cover!important;
         }
+
+        .img-fix-produk {
+            width: 60%!important; /* You can set the dimensions to whatever you want */
+            height: 200px!important;
+            object-fit: cover!important;
+        }
+
+        .fix-text {
+            font-size: 15px!important;
+        }
     </style>
 @endpush
 
