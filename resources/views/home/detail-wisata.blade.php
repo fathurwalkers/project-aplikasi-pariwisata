@@ -8,9 +8,15 @@
             object-fit: cover!important;
         }
 
+        .img-fix-produk {
+            width: 60%!important; /* You can set the dimensions to whatever you want */
+            height: 200px!important;
+            object-fit: cover!important;
+        }
+
         .fix-text {
-        font-size: 15px!important;
-    }
+            font-size: 15px!important;
+        }
     </style>
 @endpush
 
@@ -104,7 +110,9 @@
                             <img class="card-img-top img-fix" src="{{ asset('foto') }}/{{ $item->produk_headergambar }}" alt="Card image cap">
                             <div class="card-body">
                                 <h5 class="card-title">
-                                    <a href="#" class="link"  data-toggle="modal" data-target="#modaldetailproduk{{ $item->id }}" ></a> {{ $item->produk_nama }}
+                                    <a href="#" class="link"  data-toggle="modal" data-target="#modaldetailproduk{{ $item->id }}" >
+                                        {{ $item->produk_nama }}
+                                    </a>
                                 </h5>
                                 <p class="card-text">{{ Str::limit($item->produk_keterangan, 50) }}</p>
                             </div>
@@ -117,24 +125,62 @@
                             <div class="modal-content">
 
                                 <div class="modal-header">
-                                    <h4 class="modal-title">Detail Informasi Produk - {{ $item->nama }}</h4>
+                                    <h4 class="modal-title">Detail Informasi Produk - {{ $item->produk_nama }}</h4>
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                         <span aria-hidden="true">&times;</span>
                                     </button>
                                 </div>
 
                                 <div class="modal-body">
-                                    <div class="row">
-                                        <div class="col-sm-4 col-md-4 col-lg-4">
-                                            <h5 class="fix-text">Nama Produk </h5>
+
+                                    <div class="row mb-2">
+                                        <div class="col-sm-12 col-md-12 col-lg-12 d-flex justify-content-center">
+                                            <img class="card-img-top img-fix-produk" src="{{ asset('foto') }}/{{ $item->produk_headergambar }}" alt="Card image cap">
                                         </div>
                                     </div>
+
+                                    <hr />
+
+                                    <div class="row mb-2">
+                                        <div class="col-sm-2 col-md-2 col-lg-2">
+                                        </div>
+
+                                        <div class="col-sm-4 col-md-4 col-lg-4">
+                                            <h5 class="fix-text">Nama Produk </h5>
+                                            <h5 class="fix-text">Harga </h5>
+                                        </div>
+
+                                        <div class="col-sm-4 col-md-4 col-lg-4">
+                                            <h5 class="fix-text"> : {{ $item->produk_nama }}</h5>
+                                            <h5 class="fix-text"> : {{ $item->produk_harga }}</h5>
+                                        </div>
+
+                                        <div class="col-sm-2 col-md-2 col-lg-2">
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-sm-12 col-md-12 col-lg-12 d-flex justify-content-center">
+                                            <h5 class="fix-text">Keterangan</h5>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-sm-2 col-md-2 col-lg-2">
+                                        </div>
+                                        <div class="col-sm-8 col-md-8 col-lg-8">
+                                            {!! $item->produk_keterangan !!}
+                                        </div>
+                                        <div class="col-sm-2 col-md-2 col-lg-2">
+                                        </div>
+                                    </div>
+
                                 </div>
 
                                 <div class="modal-footer">
-                                    <button type="button" class="btn gray btn-outline-secondary" data-dismiss="modal">Cancel</button>
-                                    <button type="submit" class="btn btn-outline-danger" >
-                                        Delete
+                                    <button type="button" class="btn gray btn-danger" data-dismiss="modal">Batal</button>
+                                    <button type="submit" class="btn btn-info" >
+                                        Pesan
                                     </button>
                                 </div>
                             </div>

@@ -90,9 +90,8 @@
                 </div>
             </div>
             <div class="row mb-4">
-
                 @if ($produk == null)
-                   <h4 class="text-center"> No Products are offered in this location.</h4>
+                   <h4 class="text-center"> No product offers at this location. </h4>
                 @else
                     @foreach ($produk as $item)
 
@@ -100,8 +99,80 @@
                         <div class="card" style="width: 18rem;">
                             <img class="card-img-top img-fix" src="{{ asset('foto') }}/{{ $item->produk_headergambar }}" alt="Card image cap">
                             <div class="card-body">
-                                <h5 class="card-title">{{ $item->produk_nama }}</h5>
+                                <h5 class="card-title">
+                                    <a href="#" class="link"  data-toggle="modal" data-target="#modaldetailproduk{{ $item->id }}" >
+                                        {{ $item->produk_nama }}
+                                    </a>
+                                </h5>
                                 <p class="card-text">{{ Str::limit($item->produk_keterangan, 50) }}</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    {{-- MODAL --}}
+                    <div class="modal fade" id="modaldetailproduk{{ $item->id }}" tabindex="1" role="dialog" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+
+                                <div class="modal-header">
+                                    <h4 class="modal-title">Product Information - {{ $item->produk_nama }}</h4>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+
+                                <div class="modal-body">
+
+                                    <div class="row mb-2">
+                                        <div class="col-sm-12 col-md-12 col-lg-12 d-flex justify-content-center">
+                                            <img class="card-img-top img-fix-produk" src="{{ asset('foto') }}/{{ $item->produk_headergambar }}" alt="Card image cap">
+                                        </div>
+                                    </div>
+
+                                    <hr />
+
+                                    <div class="row mb-2">
+                                        <div class="col-sm-2 col-md-2 col-lg-2">
+                                        </div>
+
+                                        <div class="col-sm-4 col-md-4 col-lg-4">
+                                            <h5 class="fix-text">Product Name </h5>
+                                            <h5 class="fix-text">Price </h5>
+                                        </div>
+
+                                        <div class="col-sm-4 col-md-4 col-lg-4">
+                                            <h5 class="fix-text"> : {{ $item->produk_nama }}</h5>
+                                            <h5 class="fix-text"> : {{ $item->produk_harga }}</h5>
+                                        </div>
+
+                                        <div class="col-sm-2 col-md-2 col-lg-2">
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-sm-12 col-md-12 col-lg-12 d-flex justify-content-center">
+                                            <h5 class="fix-text">Information</h5>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="col-sm-2 col-md-2 col-lg-2">
+                                        </div>
+                                        <div class="col-sm-8 col-md-8 col-lg-8">
+                                            {!! $item->produk_keterangan !!}
+                                        </div>
+                                        <div class="col-sm-2 col-md-2 col-lg-2">
+                                        </div>
+                                    </div>
+
+                                </div>
+
+                                <div class="modal-footer">
+                                    <button type="button" class="btn gray btn-danger" data-dismiss="modal">Cancel</button>
+                                    <button type="submit" class="btn btn-info" >
+                                        Order
+                                    </button>
+                                </div>
                             </div>
                         </div>
                     </div>
